@@ -13,19 +13,19 @@
     <img src="https://github.com/devbrunopaula/pomobreak/raw/main/github/images/bruno.jpg" alt="Logo"  >
   </a>
 
-  <h3 align="center">Facebook Clone</h3>
+  <h3 align="center">Rent My Stuff</h3>
 
   <p align="center">
-    Facebook clone with core features of the platform, users, profiles, friending, posts, comments, news feed, and liking. Sign-in with real Facebook by using Next JS API and auth token implemented..
+    Tired of paying ridiculous fees for camera and other equipment rentals? Bypass the middleman and rent from a real person
     <br />
-    <a href="https://facebook-clone-bruno.vercel.app/"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/devbrunopaula/rentmystuff"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://facebook-clone-bruno.vercel.app/">View Demo</a>
+    <a href="https://rentmystuff.netlify.app/">View Demo</a>
     ·
-    <a href="https://facebook-clone-bruno.vercel.app/issues">Report Bug</a>
+    <a href="https://github.com/devbrunopaula/rentmystuff/issues">Report Bug</a>
     ·
-    <a href="https://facebook-clone-bruno.vercel.app/issues">Request Feature</a>
+    <a href="https://github.com/devbrunopaula/rentmystuff/issues">Request Feature</a>
   </p>
 </p>
 
@@ -36,8 +36,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Next JS</a></li>
-        <li><a href="#built-with">FaceBook Main Design</a></li>
+        <li><a href="#built-with">Rent My Stuff</a></li>
       </ul>
     </li>
     <li>
@@ -61,15 +60,12 @@
 ## About The Project
 
 <div>
-<img src="https://logos-world.net/wp-content/uploads/2020/04/Facebook-Logo.png" alt="Logo"  height="80px">
-<img src="https://cdn.iconscout.com/icon/free/png-256/copy-1876872-1587650.png" alt="Logo"  height="80px">
-</div>
 
 [![Product Name Screen Shot][product-screenshot]](https://facebook-clone-bruno.vercel.app/)
 
 ### Built With
 
--   [Next JS](https://nextjs.org/)
+-   [Next JS](https://reactjs.org/)
 
 <!-- GETTING STARTED -->
 
@@ -90,7 +86,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
     ```sh
-    git clone https://github.com/devbrunopaula/facebook-clone
+    git clone https://github.com/devbrunopaula/rentmystuff.git
     ```
 2. Install NPM packages
     ```sh
@@ -160,7 +156,7 @@ Project Link: [https://facebook-clone-bruno.vercel.app/](https://facebook-clone-
 [license-url]: https://github.com/devbrunopaula/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/bruno-paula
-[product-screenshot]: https://miro.medium.com/max/845/1*kr6O3Wz5jHcVsN9Vx9Ei-Q.png
+[product-screenshot]: ./screenshot.png
 [project-ad]: https://logos-world.net/wp-content/uploads/2020/04/Facebook-Logo.png
 [logo]: https://github.com/devbrunopaula/pomobreak/raw/main/github/images/bruno.jpg
 [openissues]: (https://img.shields.io/bitbucket/issues/devbrunopaula/quest-nextJs?style=for-the-badge)
