@@ -1,24 +1,26 @@
 import * as actions from '../types/itemsTypes'
 
 const INITIAL_STATE = {
-	items: [],
+	products: [],
 	loading: false,
+	error: '',
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
-		case actions.ITEMS:
+		case actions.FETCHING_LOADING:
+			return {
+				loading: action.payload,
+			}
+		case actions.FETCH_ITEMS_COMPLETED:
 			return {
 				...state,
-				// items: state.item + 1,
+				products: action.payload,
 			}
-
-		case actions.ADD_ITEMS:
+		case actions.FETCH_ITEMS_ERROR:
 			return {
-				...state,
-				// items: state.count - 1,
+				error: action.payload,
 			}
-
 		default:
 			return state
 	}

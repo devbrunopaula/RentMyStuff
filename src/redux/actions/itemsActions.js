@@ -1,20 +1,24 @@
-import {ITEMS, ADD_ITEMS} from '../types/itemsTypes'
-import axios from axios
-
-
+import * as actions from '../types/itemsTypes'
+import axios from 'axios'
 
 export const getItems = () => {
-return 
-} 
-
-export const increaseCounter = () => {
-	return {
-		type: ITEMS,
-	}
-}
-
-export const decreaseCounter = () => {
-	return {
-		type: ADD_ITEMS,
+	return async (dispatch) => {
+		dispatch({type: actions.FETCHING_LOADING, payload: true})
+		dispatch({type: actions.FETCHING_ITEMS})
+		try {
+			const result = await axios(
+				'https://usemytechstuff3.herokuapp.com/api/products'
+			)
+			dispatch({type: actions.FETCHING_LOADING, payload: false})
+			dispatch({
+				type: actions.FETCH_ITEMS_COMPLETED,
+				payload: result.data,
+			})
+		} catch (error) {
+			dispatch({
+				type: actions.FETCH_ITEMS_ERROR,
+				payload: error.message,
+			})
+		}
 	}
 }

@@ -65,7 +65,10 @@
 
 ### Built With
 
--   [Next JS](https://reactjs.org/)
+-   Fornt End [React JS](https://reactjs.org/)
+-   Back End [Node JS](https://nodejs.org/)
+-   State Manager [REDUX](https://redux.js.org/)
+-   SQL RDBMS [POSTGRES](https://www.postgresql.org)
 
 <!-- GETTING STARTED -->
 
@@ -99,13 +102,13 @@ This is an example of how to list things you need to use the software and how to
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://github.com/devbrunopaula/facebook-clone)_
+_For more examples, please refer to the [Documentation](https://github.com/devbrunopaula/rentmystuff)_
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
-See the [open issues](https://github.com/devbrunopaula/facebook-clone/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/devbrunopaula/rentmystuff/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -137,8 +140,8 @@ Project Link: [https://facebook-clone-bruno.vercel.app/](https://facebook-clone-
 
 ## Acknowledgements
 
--   [Next JS Team](https://nextjs.org/)
--   [Vercel](https://vercel.com/)
+-   [ReactJS Team](https://reactjs.org/)
+-   [Netlify](https://netlify.com/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

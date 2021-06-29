@@ -1,8 +1,9 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 import DashboardLayout from './components/layouts/dashboard'
+import ItemLayout from './components/layouts/Items'
 import Dashboard from './pages/dashboard'
-import Items from './pages/index'
+import Items from './pages'
 import Login from './pages/login'
 import {PrivateRoute} from './components/privateRoute'
 function App() {
@@ -15,17 +16,11 @@ function App() {
 				<Login />
 			</Route>
 			<Route path='/items'>
-				<Items />
+				<ItemLayout>
+					<Items />
+				</ItemLayout>
 			</Route>
-			{/* <PrivateRoute
-				exact
-				path='/dashboard'
-				component={
-					<DashboardLayout>
-						<Dashboard />
-					</DashboardLayout>
-				}
-			/> */}
+
 			<DashboardLayout>
 				<PrivateRoute exact path='/dashboard' component={Dashboard} />
 			</DashboardLayout>
