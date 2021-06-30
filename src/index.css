@@ -15,3 +15,22 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+
+.cart-bubble {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 1.6rem;
+	height: 1.6rem;
+	position: absolute;
+	right: -0.8rem;
+	line-height: 1;
+	top: -0.2rem;
+	border-radius: 50%;
+	padding-bottom: 1px;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #fff;
+	background-color: #ff5b5b;
+	box-shadow: 0 7px 8px rgb(0 0 0 / 5%);
+}

@@ -1,4 +1,6 @@
 import React from 'react'
+import {useDispatch} from 'react-redux'
+import {addItemsCart} from '../redux/actions/cartActions'
 import {
 	CurrencyBangladeshiIcon,
 	CurrencyDollarIcon,
@@ -7,7 +9,11 @@ import {
 } from '@heroicons/react/solid'
 
 export default function ItemList({items}) {
-	console.log(items.products)
+	const dispatch = useDispatch()
+
+	const addITem = (data) => {
+		dispatch(addItemsCart(data))
+	}
 	return (
 		<ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-8'>
 			{items.products &&
@@ -48,10 +54,7 @@ export default function ItemList({items}) {
 						<div>
 							<div className='-mt-px flex divide-x divide-gray-200'>
 								<div className='w-0 flex-1 flex'>
-									<a
-										href={`mailto:${person.price}`}
-										className='relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500'
-									>
+									<span className='relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500'>
 										<CurrencyDollarIcon
 											className='w-5 h-5 text-gray-400'
 											aria-hidden='true'
@@ -59,19 +62,26 @@ export default function ItemList({items}) {
 										<span className='ml-3'>
 											{person.price}
 										</span>
-									</a>
+									</span>
 								</div>
 								<div className='-ml-px w-0 flex-1 flex'>
-									<a
-										href={`tel:${person.telephone}`}
+									<span
+										href={'/'}
 										className='relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500'
 									>
 										<ShoppingCartIcon
-											className='w-5 h-5 text-gray-400'
+											className='w-5 h-5 text-gray-500'
 											aria-hidden='true'
 										/>
-										<span className='ml-3'>Rent It</span>
-									</a>
+										<button
+											className='ml-3'
+											onClick={() => addITem(person)}
+										>
+											{person.available
+												? 'Rent It'
+												: 'Wish List'}
+										</button>
+									</span>
 								</div>
 							</div>
 						</div>

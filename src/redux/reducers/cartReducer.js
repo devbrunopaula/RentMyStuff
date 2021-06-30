@@ -1,26 +1,19 @@
-// import {ITEMS, ADDITEMS} from '../types/itemsTypes'
+import * as actions from '../types/cartTypes'
 
-// const INITIAL_STATE = {
-// 	cart: [],
-// }
+const INITIAL_STATE = {
+	cart: [],
+}
 
-// const reducer = (state = INITIAL_STATE, action) => {
-// 	switch (action.type) {
-// 		case ITEMS:
-// 			return {
-// 				...state,
-// 				// items: state.item + 1,
-// 			}
+const cartReducer = (state = INITIAL_STATE, action) => {
+	switch (action.type) {
+		case actions.ITEM_ADDED:
+			return {
+				...state,
+				cart: [...state.cart, action.payload],
+			}
 
-// 		case ADDITEMS:
-// 			return {
-// 				...state,
-// 				// items: state.count - 1,
-// 			}
-
-// 		default:
-// 			return state
-// 	}
-// }
-
-// export default reducer
+		default:
+			return state
+	}
+}
+export default cartReducer
