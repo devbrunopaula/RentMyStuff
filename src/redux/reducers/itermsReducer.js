@@ -12,6 +12,7 @@ const reducer = (state = INITIAL_STATE, action) => {
 			return {
 				loading: true,
 			}
+
 		case actions.FETCH_ITEMS_COMPLETED:
 			return {
 				...state,

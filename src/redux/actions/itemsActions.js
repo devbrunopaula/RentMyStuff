@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const getItems = () => {
 	return async (dispatch) => {
-		dispatch({type: actions.FETCHING_ITEMS})
+		dispatch({type: actions.FETCHING_LOADING})
 		try {
 			const result = await axios(
 				'https://usemytechstuff3.herokuapp.com/api/products'
