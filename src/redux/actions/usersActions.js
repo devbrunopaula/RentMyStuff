@@ -11,7 +11,7 @@ export const loggedIn = (payload) => {
 				payload
 			)
 			window.localStorage.setItem('token', res.data.token)
-			console.log('data', res.data)
+
 			disaptch({type: actions.LOGGED_IN, payload: res.data})
 			disaptch({type: actions.LOGIN_LOADING, payload: false})
 		} catch (error) {

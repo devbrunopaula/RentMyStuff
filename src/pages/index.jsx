@@ -7,8 +7,6 @@ export default function index() {
 	const state = useSelector((state) => state.items)
 	const dispatch = useDispatch()
 
-	console.log('state', state)
-
 	useEffect(() => {
 		dispatch(Items.getItems())
 	}, [])

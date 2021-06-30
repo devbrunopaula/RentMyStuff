@@ -8,7 +8,7 @@ import {useSelector} from 'react-redux'
 
 export default function Header() {
 	const items = useSelector((state) => state.cart)
-	console.log('items header', items)
+
 	return (
 		<div>
 			<Disclosure as='nav' className='bg-white shadow'>

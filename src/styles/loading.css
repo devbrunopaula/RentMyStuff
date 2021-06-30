@@ -1,0 +1,8 @@
+.loading {
+	/* border: 1px solid rgb(4, 182, 57); */
+	max-width: 1200px;
+	margin: 20px auto;
+	height: 200px;
+	display: flex;
+	align-items: center;
+}

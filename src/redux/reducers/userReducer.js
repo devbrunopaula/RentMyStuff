@@ -14,7 +14,7 @@ const reducer = (state = INITIAL_STATE, action) => {
 		case actions.LOGIN_LOADING:
 			return {
 				...state,
-				loading: action.payload,
+				loading: true,
 			}
 		case actions.LOGGED_IN:
 			return {
@@ -28,6 +28,7 @@ const reducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				error: action.payload,
+				loading: true,
 			}
 
 		default:

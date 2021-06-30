@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {loggedIn} from '../redux/actions/usersActions'
 import {Redirect} from 'react-router-dom'
-// import {XCircleIcon} from '@heroicons/react/solid'
+import loading from '../assets/images/loading.gif'
 
 const initalState = {
 	user_username: 'brunopaula',
@@ -27,6 +27,10 @@ export default function Login() {
 
 	if (state.token) {
 		return <Redirect to='/dashboard' />
+	}
+
+	const loadingImage = () => {
+		return <img alt='loading' src={loading} height='20px' width='20px' />
 	}
 
 	return (
@@ -126,7 +130,7 @@ export default function Login() {
 								type='submit'
 								className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
 							>
-								Sign in
+								{state.loading ? loadingImage() : 'Sign in'}
 							</button>
 							{state.error.length > 1 ? <p>Error</p> : ''}
 						</div>
