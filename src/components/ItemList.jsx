@@ -1,12 +1,7 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
 import {addItemsCart} from '../redux/actions/cartActions'
-import {
-	CurrencyBangladeshiIcon,
-	CurrencyDollarIcon,
-	ShoppingCartIcon,
-	PhoneIcon,
-} from '@heroicons/react/solid'
+import {CurrencyDollarIcon, ShoppingCartIcon} from '@heroicons/react/solid'
 
 export default function ItemList({items}) {
 	const dispatch = useDispatch()

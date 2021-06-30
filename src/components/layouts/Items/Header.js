@@ -1,14 +1,10 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, {Fragment} from 'react'
-import {Disclosure, Menu, Transition} from '@headlessui/react'
+import React from 'react'
+import {Disclosure} from '@headlessui/react'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
 import {PlusIcon, ShoppingCartIcon} from '@heroicons/react/solid'
 import logo from '../../../assets/images/logo.png'
 import {useSelector} from 'react-redux'
-
-function classNames(...classes) {
-	return classes.filter(Boolean).join(' ')
-}
 
 export default function Header() {
 	const items = useSelector((state) => state.cart)
