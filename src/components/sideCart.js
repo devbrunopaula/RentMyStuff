@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
-import {Dialog, Menu, Transition} from '@headlessui/react'
+import {Dialog, Transition} from '@headlessui/react'
 import {XIcon} from '@heroicons/react/outline'
-import {DotsVerticalIcon} from '@heroicons/react/solid'
+// import {DotsVerticalIcon} from '@heroicons/react/solid'
 import {useSelector, useDispatch} from 'react-redux'
 import * as actions from '../redux/actions/cartActions'
 
