@@ -6,3 +6,23 @@ export const addItemsCart = (payload) => {
 		payload,
 	}
 }
+
+export const toggleCart = () => {
+	return {
+		type: actions.CART_TOGGLE,
+	}
+}
+
+export const closeCart = (payload) => {
+	return {
+		type: actions.CART_CLOSED,
+		payload,
+	}
+}
+
+export const openCart = (payload) => {
+	return {
+		type: actions.CART_OPEN,
+		payload,
+	}
+}

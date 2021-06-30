@@ -4,10 +4,16 @@ import {Disclosure} from '@headlessui/react'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
 import {PlusIcon, ShoppingCartIcon} from '@heroicons/react/solid'
 import logo from '../../../assets/images/logo.png'
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import * as actions from '../../../redux/actions/cartActions'
 
 export default function Header() {
 	const items = useSelector((state) => state.cart)
+	const dispatch = useDispatch()
+
+	const toggleCart = () => {
+		dispatch(actions.openCart(true))
+	}
 
 	return (
 		<div>
@@ -110,6 +116,7 @@ export default function Header() {
 											<ShoppingCartIcon
 												className='h-6 w-6'
 												aria-hidden='true'
+												onClick={toggleCart}
 											/>
 										</button>
 									</div>
