@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import {XIcon} from '@heroicons/react/outline'
 // import {DotsVerticalIcon} from '@heroicons/react/solid'
@@ -7,8 +7,8 @@ import * as actions from '../redux/actions/cartActions'
 
 const tabs = [
 	{name: 'All', href: '#', current: true},
-	{name: 'Online', href: '#', current: false},
-	{name: 'Offline', href: '#', current: false},
+	{name: 'Wish List', href: '#', current: false},
+	{name: 'Saved', href: '#', current: false},
 ]
 
 function classNames(...classes) {
@@ -19,17 +19,28 @@ export default function SideCart() {
 	const dispatch = useDispatch()
 	const [value, setValue] = useState(1)
 	const [total, setTotal] = useState(0)
-	const {open, items} = useSelector((state) => ({
+	const {open, items, cartTotal} = useSelector((state) => ({
 		open: state.cart.toggle,
 		items: state.cart.cart,
+		cartTotal: state.cart.total,
 	}))
 
 	const onChange = (event, item) => {
 		console.log(item)
 		dispatch(actions.cartItemChange(item.item_id, event.target.value))
+		dispatch(actions.cartTotal())
 	}
 
-	console.log('ran')
+	const getTotal = () => {
+		let cartResult = 0
+		if (cartTotal) {
+			cartResult = cartTotal.reduce((acc, cur) => acc + cur, 0)
+		} else {
+			return cartResult
+		}
+		return cartResult.toFixed(2)
+	}
+
 	return (
 		<Transition.Root show={open} as={Fragment}>
 			<Dialog
@@ -118,6 +129,7 @@ export default function SideCart() {
 													<input
 														className='ml-2 w-14'
 														type='number'
+														min='0'
 														value={item.qty}
 														onChange={(e) =>
 															onChange(e, item)
@@ -169,6 +181,11 @@ export default function SideCart() {
 													</div>
 												</div>
 											))}
+										<h3 className='pt-9 pr-4 flex justify-end text-lg text-gray-800'>
+											{items.length > 0
+												? `Total: $${getTotal()}`
+												: ''}
+										</h3>
 									</div>
 								</div>
 							</div>

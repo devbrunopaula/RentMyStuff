@@ -12,6 +12,11 @@ export const toggleCart = () => {
 		type: actions.CART_TOGGLE,
 	}
 }
+export const cartTotal = () => {
+	return {
+		type: actions.CART_TOTAL,
+	}
+}
 export const cartItemChange = (id, payload) => {
 	return {
 		type: actions.CART_ITEM_CHANGE,

@@ -3,6 +3,7 @@ import * as actions from '../types/cartTypes'
 const INITIAL_STATE = {
 	cart: [],
 	toggle: false,
+	total: '',
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -39,6 +40,13 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				toggle: action.payload,
+			}
+		case actions.CART_TOTAL:
+			return {
+				...state,
+				total: state.cart.map((e) => {
+					return e.qty * e.price
+				}),
 			}
 
 		default:

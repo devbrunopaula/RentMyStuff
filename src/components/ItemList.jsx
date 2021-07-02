@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import {addItemsCart} from '../redux/actions/cartActions'
+import * as actions from '../redux/actions/cartActions'
 import {CurrencyDollarIcon, ShoppingCartIcon} from '@heroicons/react/solid'
 
 export default function ItemList({items}) {
@@ -11,7 +11,8 @@ export default function ItemList({items}) {
 			...item,
 			qty: 1,
 		}
-		dispatch(addItemsCart(data))
+		dispatch(actions.addItemsCart(data))
+		dispatch(actions.cartTotal())
 	}
 	return (
 		<ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-8'>
