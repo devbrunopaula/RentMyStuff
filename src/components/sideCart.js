@@ -25,7 +25,6 @@ export default function SideCart() {
 	}))
 
 	const onChange = (event, item) => {
-		console.log(item)
 		dispatch(actions.cartItemChange(item.item_id, event.target.value))
 		dispatch(actions.cartTotal())
 	}

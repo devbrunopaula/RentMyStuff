@@ -4,8 +4,9 @@ import * as actions from '../redux/actions/cartActions'
 import {CurrencyDollarIcon, ShoppingCartIcon} from '@heroicons/react/solid'
 
 export default function ItemList({items}) {
-	const {cart} = useSelector((state) => ({
+	const {cart, wishList} = useSelector((state) => ({
 		cart: state.cart.cart,
+		wishList: state.cart.wishList,
 	}))
 	const dispatch = useDispatch()
 
@@ -15,15 +16,18 @@ export default function ItemList({items}) {
 			qty: 1,
 		}
 
-		for (const [index, element] of cart.entries()) {
-			console.log(element)
-			if (element.item_id == item.item_id) {
-				return
-			} else if (!item.available) {
-				return
+		if (item.available) {
+			for (const el of cart) {
+				if (el.item_id === item.item_id) return
 			}
+			dispatch(actions.addItemsCart(data))
+		} else {
+			for (let wish of wishList) {
+				if (wish.item_id === item.item_id) return
+			}
+			dispatch(actions.addToWishList(item))
 		}
-		dispatch(actions.addItemsCart(data))
+
 		dispatch(actions.cartTotal())
 	}
 	return (

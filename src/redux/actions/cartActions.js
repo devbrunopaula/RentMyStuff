@@ -45,3 +45,10 @@ export const deleteItem = (payload) => {
 		payload,
 	}
 }
+
+export const addToWishList = (payload) => {
+	return {
+		type: actions.ADD_WISHLIST,
+		payload,
+	}
+}

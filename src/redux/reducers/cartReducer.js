@@ -2,6 +2,7 @@ import * as actions from '../types/cartTypes'
 
 const INITIAL_STATE = {
 	cart: [],
+	wishList: [],
 	toggle: false,
 	total: '',
 }
@@ -52,6 +53,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				cart: state.cart.filter((e) => e.item_id !== action.payload),
+			}
+		case actions.ADD_WISHLIST:
+			return {
+				...state,
+				wishList: [...state.wishList, action.payload],
 			}
 
 		default:

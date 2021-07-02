@@ -14,7 +14,6 @@ export const getItems = () => {
 				payload: result.data,
 			})
 		} catch (error) {
-			console.log('error')
 			dispatch({
 				type: actions.FETCH_ITEMS_ERROR,
 				payload: error.message,
