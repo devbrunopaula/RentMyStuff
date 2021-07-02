@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react'
+import React, {Fragment} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import {XIcon} from '@heroicons/react/outline'
 // import {DotsVerticalIcon} from '@heroicons/react/solid'
@@ -17,8 +17,7 @@ function classNames(...classes) {
 
 export default function SideCart() {
 	const dispatch = useDispatch()
-	const [value, setValue] = useState(1)
-	const [total, setTotal] = useState(0)
+
 	const {open, items, cartTotal} = useSelector((state) => ({
 		open: state.cart.toggle,
 		items: state.cart.cart,
