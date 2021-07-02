@@ -1,15 +1,27 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import * as actions from '../redux/actions/cartActions'
 import {CurrencyDollarIcon, ShoppingCartIcon} from '@heroicons/react/solid'
 
 export default function ItemList({items}) {
+	const {cart} = useSelector((state) => ({
+		cart: state.cart.cart,
+	}))
 	const dispatch = useDispatch()
 
 	const addITem = (item) => {
 		const data = {
 			...item,
 			qty: 1,
+		}
+
+		for (const [index, element] of cart.entries()) {
+			console.log(element)
+			if (element.item_id == item.item_id) {
+				return
+			} else if (!item.available) {
+				return
+			}
 		}
 		dispatch(actions.addItemsCart(data))
 		dispatch(actions.cartTotal())

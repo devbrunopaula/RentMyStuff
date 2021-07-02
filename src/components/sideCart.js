@@ -182,13 +182,12 @@ export default function SideCart() {
 
 														<div className='ml-2'>
 															<TrashIcon
-																className='text-red-800'
+																className='text-red-800 h-6 w-6'
 																onClick={() =>
 																	deleteItem(
 																		item.item_id
 																	)
 																}
-																className='h-6 w-6'
 																aria-hidden='true'
 															/>
 														</div>
