@@ -48,6 +48,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 					return e.qty * e.price
 				}),
 			}
+		case actions.CART_DETELE_ITEM:
+			return {
+				...state,
+				cart: state.cart.filter((e) => e.item_id !== action.payload),
+			}
 
 		default:
 			return state

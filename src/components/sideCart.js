@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
-import {XIcon} from '@heroicons/react/outline'
+import {XIcon, TrashIcon} from '@heroicons/react/outline'
 // import {DotsVerticalIcon} from '@heroicons/react/solid'
 import {useSelector, useDispatch} from 'react-redux'
 import * as actions from '../redux/actions/cartActions'
@@ -38,6 +38,12 @@ export default function SideCart() {
 			return cartResult
 		}
 		return cartResult.toFixed(2)
+	}
+
+	const deleteItem = (item_id) => {
+		if (!item_id) return
+		dispatch(actions.deleteItem(item_id))
+		dispatch(actions.cartTotal())
 	}
 
 	return (
@@ -175,7 +181,16 @@ export default function SideCart() {
 														{/* </a> */}
 
 														<div className='ml-2'>
-															<span>X</span>
+															<TrashIcon
+																className='text-red-800'
+																onClick={() =>
+																	deleteItem(
+																		item.item_id
+																	)
+																}
+																className='h-6 w-6'
+																aria-hidden='true'
+															/>
 														</div>
 													</div>
 												</div>

@@ -38,3 +38,10 @@ export const openCart = (payload) => {
 		payload,
 	}
 }
+
+export const deleteItem = (payload) => {
+	return {
+		type: actions.CART_DETELE_ITEM,
+		payload,
+	}
+}
