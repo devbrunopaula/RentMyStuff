@@ -34,3 +34,40 @@ code {
 	background-color: #ff5b5b;
 	box-shadow: 0 7px 8px rgb(0 0 0 / 5%);
 }
+
+.test {
+	border: solid red;
+}
+
+.test1 {
+	border: solid blue;
+}
+.test2 {
+	border: solid rgba(1, 71, 7, 0.5);
+	flex: 1;
+	padding: 10px 0;
+}
+
+.test3 {
+	border: solid rgba(199, 196, 7, 0.5);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	opacity: 1;
+	padding: 0;
+	margin: 0;
+	outline: none !important;
+}
+
+input[type='number'] {
+	border: none;
+	padding-left: 5px;
+	margin-right: 3px;
+}
+
+input[type='number']:focus {
+	outline: none !important;
+	border: none;
+	box-shadow: 0 0 10px #ffffff;
+}

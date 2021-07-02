@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {loggedIn} from '../redux/actions/usersActions'
+import {loggedIn, loginTyping} from '../redux/actions/usersActions'
 import {Redirect} from 'react-router-dom'
 import loading from '../assets/images/loading.gif'
 
@@ -70,6 +70,7 @@ export default function Login() {
 									id='usermail'
 									name='user_username'
 									type='text'
+									onClick={() => dispatch(loginTyping())}
 									value={value.user_username}
 									onChange={handleChange}
 									required

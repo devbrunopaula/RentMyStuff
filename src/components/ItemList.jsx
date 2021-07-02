@@ -6,7 +6,11 @@ import {CurrencyDollarIcon, ShoppingCartIcon} from '@heroicons/react/solid'
 export default function ItemList({items}) {
 	const dispatch = useDispatch()
 
-	const addITem = (data) => {
+	const addITem = (item) => {
+		const data = {
+			...item,
+			qty: 1,
+		}
 		dispatch(addItemsCart(data))
 	}
 	return (

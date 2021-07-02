@@ -6,3 +6,4 @@ export const CART_OPEN = 'CART_OPEN'
 export const CART_CLOSED = 'CART_CLOSED'
 
 export const CART_TOGGLE = 'CART_TOGGLE'
+export const CART_ITEM_CHANGE = 'CART_ITEM_CHANGE'

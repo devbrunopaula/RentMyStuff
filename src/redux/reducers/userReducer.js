@@ -23,6 +23,11 @@ const reducer = (state = INITIAL_STATE, action) => {
 				token: action.payload.token,
 				auth: action.payload.token ? true : false,
 			}
+		case actions.LOGGIN_TYPING:
+			return {
+				...state,
+				loading: false,
+			}
 
 		case actions.LOGIN_ERROR:
 			return {

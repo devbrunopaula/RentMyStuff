@@ -22,3 +22,9 @@ export const loggedIn = (payload) => {
 		}
 	}
 }
+
+export const loginTyping = () => {
+	return {
+		type: actions.LOGGIN_TYPING,
+	}
+}

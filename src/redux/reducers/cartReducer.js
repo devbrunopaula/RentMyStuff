@@ -12,6 +12,19 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 				...state,
 				cart: [...state.cart, action.payload],
 			}
+		case actions.CART_ITEM_CHANGE:
+			return {
+				...state,
+
+				cart: state.cart.filter((e) => {
+					if (e.item_id === action.id) {
+						e.qty = action.payload
+						return e
+					} else {
+						return e
+					}
+				}),
+			}
 		case actions.CART_TOGGLE:
 			return {
 				...state,
