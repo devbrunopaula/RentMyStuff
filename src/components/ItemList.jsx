@@ -2,6 +2,7 @@ import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import * as actions from '../redux/actions/cartActions'
 import {CurrencyDollarIcon, ShoppingCartIcon} from '@heroicons/react/solid'
+import {Link} from 'react-router-dom'
 
 export default function ItemList({items}) {
 	const {cart, wishList} = useSelector((state) => ({
@@ -33,40 +34,49 @@ export default function ItemList({items}) {
 	return (
 		<ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-8'>
 			{items.products &&
-				items.products.map((person) => (
+				items.products.map((item) => (
 					<li
-						key={person.item_id}
+						key={item.item_id}
 						className='col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200'
 					>
-						<div className='flex-1 flex flex-col p-8'>
-							<img
-								className='w-auto h-32 flex-shrink-0 mx-auto bg-black full'
-								src={person.image_url}
-								alt=''
-							/>
-							<h3 className='mt-6 text-gray-900 text-sm font-medium'>
-								{person.item_name}
-							</h3>
-							<dl className='mt-1 flex-grow flex flex-col justify-between'>
-								<dd className='text-gray-500 text-sm'>
-									{person.title}
-								</dd>
-								<dt className='sr-only'>kkkkk</dt>
-								<dd className='mt-3'>
-									<span
-										className={`px-2 py-1 text-green-800 text-xs font-medium ${
-											person.available
-												? 'bg-green-100'
-												: 'bg-red-100'
-										} rounded-full`}
-									>
-										{person.available
-											? 'Available'
-											: 'Rented'}
-									</span>
-								</dd>
-							</dl>
-						</div>
+						<Link
+							to={{
+								pathname: `/items/${item.item_id}`,
+								search: `?sort=${item.item_name}`,
+
+								state: {item},
+							}}
+						>
+							<div className='flex-1 flex flex-col p-8'>
+								<img
+									className='w-auto h-32 flex-shrink-0 mx-auto bg-black full'
+									src={item.image_url}
+									alt=''
+								/>
+								<h3 className='mt-6 text-gray-900 text-sm font-medium'>
+									{item.item_name}
+								</h3>
+								<dl className='mt-1 flex-grow flex flex-col justify-between'>
+									<dd className='text-gray-500 text-sm'>
+										{item.title}
+									</dd>
+									<dt className='sr-only'>kkkkk</dt>
+									<dd className='mt-3'>
+										<span
+											className={`px-2 py-1 text-green-800 text-xs font-medium ${
+												item.available
+													? 'bg-green-100'
+													: 'bg-red-100'
+											} rounded-full`}
+										>
+											{item.available
+												? 'Available'
+												: 'Rented'}
+										</span>
+									</dd>
+								</dl>
+							</div>
+						</Link>
 						<div>
 							<div className='-mt-px flex divide-x divide-gray-200'>
 								<div className='w-0 flex-1 flex'>
@@ -76,7 +86,7 @@ export default function ItemList({items}) {
 											aria-hidden='true'
 										/>
 										<span className='ml-3'>
-											{person.price}
+											{item.price}
 										</span>
 									</span>
 								</div>
@@ -91,9 +101,9 @@ export default function ItemList({items}) {
 										/>
 										<button
 											className='ml-3'
-											onClick={() => addITem(person)}
+											onClick={() => addITem(item)}
 										>
-											{person.available
+											{item.available
 												? 'Rent It'
 												: 'Wish List'}
 										</button>

@@ -6,6 +6,8 @@ import Dashboard from './pages/dashboard'
 import Items from './pages'
 import Login from './pages/login'
 import {PrivateRoute} from './components/privateRoute'
+import ItemDetails from './pages/itemDetails'
+
 function App() {
 	return (
 		<Switch>
@@ -15,7 +17,12 @@ function App() {
 			<Route path='/login'>
 				<Login />
 			</Route>
-			<Route path='/items'>
+			<Route exact path='/items/:id'>
+				<ItemLayout>
+					<ItemDetails />
+				</ItemLayout>
+			</Route>
+			<Route exact path='/items'>
 				<ItemLayout>
 					<Items />
 				</ItemLayout>
