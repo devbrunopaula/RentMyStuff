@@ -134,7 +134,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Bruno Paula - [@devbrunopaula](https://twitter.com/devbrunopaula) - devbrunopaula@gmail.com
 
-Project Link: [https://facebook-clone-bruno.vercel.app/](https://facebook-clone-bruno.vercel.app/)
+Project Link: [https://rentmystuff.netlify.app/](https://rentmystuff.netlify.app/)
 
 <!-- ACKNOWLEDGEMENTS -->
 
