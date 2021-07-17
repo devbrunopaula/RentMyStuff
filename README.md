@@ -61,7 +61,7 @@
 
 <div>
 
-[![Product Name Screen Shot][product-screenshot]](https://facebook-clone-bruno.vercel.app/)
+[![Product Name Screen Shot][product-screenshot]](https://rentmystuff.netlify.app/)
 
 ### Built With
 
