@@ -280,7 +280,7 @@ const Home = () => {
 							</div>
 							<div className='hidden md:flex md:items-center md:space-x-6'>
 								<a
-									href='#'
+									href='/login'
 									className='text-base font-medium text-white hover:text-gray-300'
 								>
 									Log in
@@ -458,7 +458,7 @@ const Home = () => {
 					</div>
 
 					{/* Feature section with screenshot */}
-					<div className='relative bg-gray-50 pt-16 sm:pt-24 lg:pt-32'>
+					{/* <div className='relative bg-gray-50 pt-16 sm:pt-24 lg:pt-32'>
 						<div className='mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl'>
 							<div>
 								<h2 className='text-base font-semibold tracking-wider text-cyan-600 uppercase'>
@@ -482,10 +482,10 @@ const Home = () => {
 								/>
 							</div>
 						</div>
-					</div>
+					</div> */}
 
 					{/* Feature section with grid */}
-					<div className='relative bg-white py-16 sm:py-24 lg:py-32'>
+					{/* <div className='relative bg-white py-16 sm:py-24 lg:py-32'>
 						<div className='mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl'>
 							<h2 className='text-base font-semibold tracking-wider text-cyan-600 uppercase'>
 								Deploy faster
@@ -529,10 +529,10 @@ const Home = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 
 					{/* Testimonial section */}
-					<div className='pb-16 bg-gradient-to-r from-teal-500 to-cyan-600 lg:pb-0 lg:z-10 lg:relative'>
+					{/* <div className='pb-16 bg-gradient-to-r from-teal-500 to-cyan-600 lg:pb-0 lg:z-10 lg:relative'>
 						<div className='lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8'>
 							<div className='relative lg:-my-8'>
 								<div
@@ -582,10 +582,10 @@ const Home = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 
 					{/* Blog section */}
-					<div className='relative bg-gray-50 py-16 sm:py-24 lg:py-32'>
+					{/* <div className='relative bg-gray-50 py-16 sm:py-24 lg:py-32'>
 						<div className='relative'>
 							<div className='text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl'>
 								<h2 className='text-base font-semibold tracking-wider text-cyan-600 uppercase'>
@@ -687,10 +687,10 @@ const Home = () => {
 								))}
 							</div>
 						</div>
-					</div>
+					</div> */}
 
 					{/* CTA Section */}
-					<div className='relative bg-gray-900'>
+					{/* <div className='relative bg-gray-900'>
 						<div className='relative h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2'>
 							<img
 								className='w-full h-full object-cover'
@@ -734,7 +734,7 @@ const Home = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</main>
 				<footer className='bg-gray-50' aria-labelledby='footer-heading'>
 					<h2 id='footer-heading' className='sr-only'>
