@@ -7,12 +7,13 @@ import Items from './pages'
 import Login from './pages/login'
 import {PrivateRoute} from './components/privateRoute'
 import ItemDetails from './pages/itemDetails'
+import Home from './pages/home'
 
 function App() {
 	return (
 		<Switch>
 			<Route exact path='/'>
-				Home
+				<Home />
 			</Route>
 			<Route path='/login'>
 				<Login />
