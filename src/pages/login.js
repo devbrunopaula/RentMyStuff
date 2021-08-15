@@ -7,20 +7,22 @@ import {Redirect} from 'react-router-dom'
 import loading from '../assets/images/loading.gif'
 
 const initalState = {
-	user_username: 'brunopaula',
-	user_password: 'password',
+	// user_username: 'brunopaula',
+	// user_password: 'password',
+	user_username: '',
+	user_password: '',
 }
 
 export default function Login() {
 	const [value, setValue] = useState(initalState)
-	const state = useSelector((state) => state.user)
+	const state = useSelector(state => state.user)
 	const dispatch = useDispatch()
 
-	const handleChange = (e) => {
+	const handleChange = e => {
 		setValue({...value, [e.target.name]: e.target.value})
 	}
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async e => {
 		e.preventDefault()
 		await dispatch(loggedIn(value))
 	}
