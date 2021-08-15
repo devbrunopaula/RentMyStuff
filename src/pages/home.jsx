@@ -1,177 +1,150 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  const colors = require('tailwindcss/colors')
-  
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        colors: {
-          teal: colors.teal,
-          cyan: colors.cyan,
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
 import React from 'react'
 import {Fragment} from 'react'
 import {Popover, Transition} from '@headlessui/react'
 import {
-	CloudUploadIcon,
-	CogIcon,
-	LockClosedIcon,
+	// CloudUploadIcon,
+	// CogIcon,
+	// LockClosedIcon,
 	MenuIcon,
-	RefreshIcon,
-	ServerIcon,
-	ShieldCheckIcon,
+	// RefreshIcon,
+	// ServerIcon,
+	// ShieldCheckIcon,
 	XIcon,
 } from '@heroicons/react/outline'
-import {ChevronRightIcon, ExternalLinkIcon} from '@heroicons/react/solid'
+// import {ChevronRightIcon, ExternalLinkIcon} from '@heroicons/react/solid'
 
 const navigation = [
-	{name: 'Product', href: '#'},
-	{name: 'Features', href: '#'},
-	{name: 'Marketplace', href: '#'},
-	{name: 'Company', href: '#'},
+	{name: 'Product', href: '/'},
+	{name: 'Features', href: '/'},
+	{name: 'Marketplace', href: '/'},
+	{name: 'Company', href: '/'},
 ]
-const features = [
-	{
-		name: 'Push to Deploy',
-		description:
-			'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi vitae lobortis.',
-		icon: CloudUploadIcon,
-	},
-	{
-		name: 'SSL Certificates',
-		description:
-			'Qui aut temporibus nesciunt vitae dicta repellat sit dolores pariatur. Temporibus qui illum aut.',
-		icon: LockClosedIcon,
-	},
-	{
-		name: 'Simple Queues',
-		description:
-			'Rerum quas incidunt deleniti quaerat suscipit mollitia. Amet repellendus ut odit dolores qui.',
-		icon: RefreshIcon,
-	},
-	{
-		name: 'Advanced Security',
-		description:
-			'Ullam laboriosam est voluptatem maxime ut mollitia commodi. Et dignissimos suscipit perspiciatis.',
-		icon: ShieldCheckIcon,
-	},
-	{
-		name: 'Powerful API',
-		description:
-			'Ab a facere voluptatem in quia corrupti veritatis aliquam. Veritatis labore quaerat ipsum quaerat id.',
-		icon: CogIcon,
-	},
-	{
-		name: 'Database Backups',
-		description:
-			'Quia qui et est officia cupiditate qui consectetur. Ratione similique et impedit ea ipsum et.',
-		icon: ServerIcon,
-	},
-]
-const blogPosts = [
-	{
-		id: 1,
-		title: 'Boost your conversion rate',
-		href: '#',
-		date: 'Mar 16, 2020',
-		datetime: '2020-03-16',
-		category: {name: 'Article', href: '#'},
-		imageUrl:
-			'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-		preview:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-		author: {
-			name: 'Roel Aufderehar',
-			imageUrl:
-				'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-			href: '#',
-		},
-		readingLength: '6 min',
-	},
-	{
-		id: 2,
-		title: 'How to use search engine optimization to drive sales',
-		href: '#',
-		date: 'Mar 10, 2020',
-		datetime: '2020-03-10',
-		category: {name: 'Video', href: '#'},
-		imageUrl:
-			'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-		preview:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-		author: {
-			name: 'Brenna Goyette',
-			imageUrl:
-				'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-			href: '#',
-		},
-		readingLength: '4 min',
-	},
-	{
-		id: 3,
-		title: 'Improve your customer experience',
-		href: '#',
-		date: 'Feb 12, 2020',
-		datetime: '2020-02-12',
-		category: {name: 'Case Study', href: '#'},
-		imageUrl:
-			'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-		preview:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-		author: {
-			name: 'Daniela Metz',
-			imageUrl:
-				'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-			href: '#',
-		},
-		readingLength: '11 min',
-	},
-]
+// const features = [
+// 	{
+// 		name: 'Push to Deploy',
+// 		description:
+// 			'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi vitae lobortis.',
+// 		icon: CloudUploadIcon,
+// 	},
+// 	{
+// 		name: 'SSL Certificates',
+// 		description:
+// 			'Qui aut temporibus nesciunt vitae dicta repellat sit dolores pariatur. Temporibus qui illum aut.',
+// 		icon: LockClosedIcon,
+// 	},
+// 	{
+// 		name: 'Simple Queues',
+// 		description:
+// 			'Rerum quas incidunt deleniti quaerat suscipit mollitia. Amet repellendus ut odit dolores qui.',
+// 		icon: RefreshIcon,
+// 	},
+// 	{
+// 		name: 'Advanced Security',
+// 		description:
+// 			'Ullam laboriosam est voluptatem maxime ut mollitia commodi. Et dignissimos suscipit perspiciatis.',
+// 		icon: ShieldCheckIcon,
+// 	},
+// 	{
+// 		name: 'Powerful API',
+// 		description:
+// 			'Ab a facere voluptatem in quia corrupti veritatis aliquam. Veritatis labore quaerat ipsum quaerat id.',
+// 		icon: CogIcon,
+// 	},
+// 	{
+// 		name: 'Database Backups',
+// 		description:
+// 			'Quia qui et est officia cupiditate qui consectetur. Ratione similique et impedit ea ipsum et.',
+// 		icon: ServerIcon,
+// 	},
+// ]
+// const blogPosts = [
+// 	{
+// 		id: 1,
+// 		title: 'Boost your conversion rate',
+// 		href: '/',
+// 		date: 'Mar 16, 2020',
+// 		datetime: '2020-03-16',
+// 		category: {name: 'Article', href: '/'},
+// 		imageUrl:
+// 			'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+// 		preview:
+// 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+// 		author: {
+// 			name: 'Roel Aufderehar',
+// 			imageUrl:
+// 				'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+// 			href: '/',
+// 		},
+// 		readingLength: '6 min',
+// 	},
+// 	{
+// 		id: 2,
+// 		title: 'How to use search engine optimization to drive sales',
+// 		href: '/',
+// 		date: 'Mar 10, 2020',
+// 		datetime: '2020-03-10',
+// 		category: {name: 'Video', href: '/'},
+// 		imageUrl:
+// 			'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+// 		preview:
+// 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+// 		author: {
+// 			name: 'Brenna Goyette',
+// 			imageUrl:
+// 				'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+// 			href: '/',
+// 		},
+// 		readingLength: '4 min',
+// 	},
+// 	{
+// 		id: 3,
+// 		title: 'Improve your customer experience',
+// 		href: '/',
+// 		date: 'Feb 12, 2020',
+// 		datetime: '2020-02-12',
+// 		category: {name: 'Case Study', href: '/'},
+// 		imageUrl:
+// 			'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+// 		preview:
+// 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+// 		author: {
+// 			name: 'Daniela Metz',
+// 			imageUrl:
+// 				'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+// 			href: '/',
+// 		},
+// 		readingLength: '11 min',
+// 	},
+// ]
 const footerNavigation = {
 	solutions: [
-		{name: 'Marketing', href: '#'},
-		{name: 'Analytics', href: '#'},
-		{name: 'Commerce', href: '#'},
-		{name: 'Insights', href: '#'},
+		{name: 'Marketing', href: '/'},
+		{name: 'Analytics', href: '/'},
+		{name: 'Commerce', href: '/'},
+		{name: 'Insights', href: '/'},
 	],
 	support: [
-		{name: 'Pricing', href: '#'},
-		{name: 'Documentation', href: '#'},
-		{name: 'Guides', href: '#'},
-		{name: 'API Status', href: '#'},
+		{name: 'Pricing', href: '/'},
+		{name: 'Documentation', href: '/'},
+		{name: 'Guides', href: '/'},
+		{name: 'API Status', href: '/'},
 	],
 	company: [
-		{name: 'About', href: '#'},
-		{name: 'Blog', href: '#'},
-		{name: 'Jobs', href: '#'},
-		{name: 'Press', href: '#'},
-		{name: 'Partners', href: '#'},
+		{name: 'About', href: '/'},
+		{name: 'Blog', href: '/'},
+		{name: 'Jobs', href: '/'},
+		{name: 'Press', href: '/'},
+		{name: 'Partners', href: '/'},
 	],
 	legal: [
-		{name: 'Claim', href: '#'},
-		{name: 'Privacy', href: '#'},
-		{name: 'Terms', href: '#'},
+		{name: 'Claim', href: '/'},
+		{name: 'Privacy', href: '/'},
+		{name: 'Terms', href: '/'},
 	],
 	social: [
 		{
 			name: 'Facebook',
-			href: '#',
+			href: '/',
 			icon: props => (
 				<svg fill='currentColor' viewBox='0 0 24 24' {...props}>
 					<path
@@ -184,7 +157,7 @@ const footerNavigation = {
 		},
 		{
 			name: 'Instagram',
-			href: '#',
+			href: '/',
 			icon: props => (
 				<svg fill='currentColor' viewBox='0 0 24 24' {...props}>
 					<path
@@ -197,7 +170,7 @@ const footerNavigation = {
 		},
 		{
 			name: 'Twitter',
-			href: '#',
+			href: '/',
 			icon: props => (
 				<svg fill='currentColor' viewBox='0 0 24 24' {...props}>
 					<path d='M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84' />
@@ -206,7 +179,7 @@ const footerNavigation = {
 		},
 		{
 			name: 'GitHub',
-			href: '#',
+			href: '/',
 			icon: props => (
 				<svg fill='currentColor' viewBox='0 0 24 24' {...props}>
 					<path
@@ -219,7 +192,7 @@ const footerNavigation = {
 		},
 		{
 			name: 'Dribbble',
-			href: '#',
+			href: '/',
 			icon: props => (
 				<svg fill='currentColor' viewBox='0 0 24 24' {...props}>
 					<path
@@ -244,7 +217,7 @@ const Home = () => {
 						>
 							<div className='flex items-center flex-1'>
 								<div className='flex items-center justify-between w-full md:w-auto'>
-									<a href='#'>
+									<a href='/'>
 										<span className='sr-only'>
 											Workflow
 										</span>
@@ -286,7 +259,7 @@ const Home = () => {
 									Log in
 								</a>
 								<a
-									href='#'
+									href='/'
 									className='inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700'
 								>
 									Start free trial
@@ -343,7 +316,7 @@ const Home = () => {
 									</div>
 									<div className='mt-6 px-5'>
 										<a
-											href='#'
+											href='/'
 											className='block text-center w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700'
 										>
 											Start free trial
@@ -353,7 +326,7 @@ const Home = () => {
 										<p className='text-center text-base font-medium text-gray-500'>
 											Existing customer?{' '}
 											<a
-												href='#'
+												href='/'
 												className='text-gray-900 hover:underline'
 											>
 												Login
@@ -372,7 +345,7 @@ const Home = () => {
 								<div className='mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center'>
 									<div className='lg:py-24'>
 										{/* <a
-											href='#'
+											href='/'
 											className='inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200'
 										>
 											<span className='px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full'>
@@ -399,7 +372,7 @@ const Home = () => {
 										</p>
 										<div className='mt-10 sm:mt-12'>
 											<form
-												action='#'
+												action='/'
 												className='sm:max-w-xl sm:mx-auto lg:mx-0'
 											>
 												<div className='sm:flex'>
@@ -432,7 +405,7 @@ const Home = () => {
 													necessary. By providing your
 													email, you agree to our{' '}
 													<a
-														href='#'
+														href='/'
 														className='font-medium text-white'
 													>
 														terms or service
@@ -721,7 +694,7 @@ const Home = () => {
 								<div className='mt-8'>
 									<div className='inline-flex rounded-md shadow'>
 										<a
-											href='#'
+											href='/'
 											className='inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50'
 										>
 											Visit the help center
