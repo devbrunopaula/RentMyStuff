@@ -22,6 +22,7 @@ const reducer = (state = INITIAL_STATE, action) => {
 				user: action.payload.message,
 				token: action.payload.token,
 				auth: action.payload.token ? true : false,
+				// isOwner: action.payload,
 			}
 		case actions.LOGGIN_TYPING:
 			return {

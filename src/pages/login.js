@@ -7,10 +7,8 @@ import {Redirect} from 'react-router-dom'
 import loading from '../assets/images/loading.gif'
 
 const initalState = {
-	// user_username: 'brunopaula',
-	// user_password: 'password',
-	user_username: '',
-	user_password: '',
+	user_username: 'brunopaula',
+	user_password: 'password',
 }
 
 export default function Login() {
@@ -28,9 +26,8 @@ export default function Login() {
 	}
 
 	if (state.token) {
-		return <Redirect to='/dashboard' />
+		return <Redirect to='/items' />
 	}
-
 	const loadingImage = () => {
 		return <img alt='loading' src={loading} height='20px' width='20px' />
 	}

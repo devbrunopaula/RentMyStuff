@@ -5,11 +5,11 @@ export function PrivateRoute({component: Component, ...rest}) {
 	return (
 		<Route
 			{...rest}
-			render={(props) =>
+			render={props =>
 				window.localStorage.getItem('token') ? (
 					<Component {...props} />
 				) : (
-					<Redirect to='/' />
+					<Redirect to='/login' />
 				)
 			}
 		/>
