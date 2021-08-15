@@ -25,7 +25,7 @@ function App() {
 			</Route>
 			<Route exact path='/items'>
 				<ItemLayout>
-					<Items />
+					<PrivateRoute exact path='/items' component={Items} />
 				</ItemLayout>
 			</Route>
 
